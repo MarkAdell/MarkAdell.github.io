@@ -12,7 +12,7 @@
   </head>
   <body>
     <div id="main">
-      <img id="chicken-img" src="http://www.clker.com/cliparts/Q/7/U/E/h/1/white-chicken-hi.png" width="200">
+      <img id="chicken-img" src = "chicken-3.png" width="200">
       <audio id="chicken-song" loop src="super-chicken.mp3" type="audio/ogg"></audio>
       <h1>point at me with the mouse!</h1>
     </div>
@@ -43,6 +43,15 @@
           }, 300, animateChicken);
         }
         animateChicken();
+        let chickensArr = [
+          'chicken-1.png',
+          'chicken-2.png',
+          'chicken-3.png'
+        ];
+        let chickenIdx = 0;
+        setInterval(function() {
+          $('#chicken-img').attr("src", chickensArr[chickenIdx++ % 3]);
+        }, 2000);
       });
     </script>
   </body>
