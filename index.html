@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>  </title>
+    <style type="text/css">
+      #main {
+        margin-top: 100px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <img id="chicken-img" src="http://www.clker.com/cliparts/Q/7/U/E/h/1/white-chicken-hi.png" width="200">
+      <audio id="chicken-song" loop src="super-chicken.mp3" type="audio/ogg"></audio>
+      <h1>point at me with the mouse!</h1>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+      $(function() {
+        $(document).on({
+          mouseenter: function() {
+            $('#chicken-song')[0].play();
+          },
+          mouseleave: function() {
+            $('#chicken-song')[0].pause();
+          }
+        }, '#chicken-img');
+        function animateChicken() {
+          $('#chicken-img').animate({
+            marginLeft: '150px'
+          }, 300).animate({
+            marginTop: '+200px'
+          }, 300).animate({
+            marginTop: '-=200px'
+          }, 300).animate({
+            marginLeft: '-150px'
+          }, 300).animate({
+            marginTop: '+200px'
+          }, 300).animate({
+            marginTop: '-=200px'
+          }, 300, animateChicken);
+        }
+        animateChicken();
+      });
+    </script>
+  </body>
+</html>
+
+
+
